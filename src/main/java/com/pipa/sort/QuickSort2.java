@@ -24,7 +24,7 @@ package com.pipa.sort;
  */
 public class QuickSort2 {
     public static void main(String[] args) {
-        final int SIZE = 10000;
+        final int SIZE = 10000000;
         int[] input = new int[SIZE];
         for (int i = 0; i < input.length; i++) {
             input[i] = (int) (Math.random()*10000);
@@ -32,14 +32,15 @@ public class QuickSort2 {
         Long startTime = System.currentTimeMillis();
         boolean isOrdered = false;
         quickSort(input);
+        Long endTime = System.currentTimeMillis();
+        Long consume = endTime - startTime;
         for (int i = 0; i < input.length - 1; i++) {
             if(input[i+1] < input[i]){
                 break;
             }
             isOrdered = true;
         }
-        Long endTime = System.currentTimeMillis();
-        Long consume = endTime - startTime;
+
         System.out.println("is ordered?: " + isOrdered);
         System.out.printf("quick sort consume: "+consume + " ms");
     }
