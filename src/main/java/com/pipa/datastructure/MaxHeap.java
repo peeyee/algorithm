@@ -31,8 +31,8 @@ public class MaxHeap<Key extends Comparable<Key>> {
     {
         Key max = heap[1];
         swap(N,1);
-        sink(1);
         N--;
+        sink(1);
         return max;
     }
 
@@ -79,9 +79,9 @@ public class MaxHeap<Key extends Comparable<Key>> {
 
     public static void main(String[] args) {
         MaxHeap<Integer> maxHeap = new MaxHeap<>(11);
-        for (int i = 0; i < 10; i++) {
-            int k = (int) (Math.random()*1000);
-            maxHeap.insertKey(k);
+        int[] input = {100,23,45,79,155,21,900,5,12,267};
+        for (int i = 0; i < input.length; i++) {
+            maxHeap.insertKey(input[i]);
         }
         while (!maxHeap.isEmpty()){
             System.out.println(maxHeap.delMax());
